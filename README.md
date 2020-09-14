@@ -6,7 +6,7 @@ The language itself is very simple, only having basic arithmetic and register ma
 ---
 ### Info
 
-The quality of the code for this project is subpar, i wrote it before getting any formal programming teaching back in 2018. It does howver function properly as far as i can see.
+The quality of the code for this project is subpar, I wrote it before getting any formal programming teaching back in 2018. It does however function properly as far as I can see.
 
 ---
 ![Demo Gif](https://github.com/archeoid/InterpretedAssembly/blob/master/images/demo1.gif)
