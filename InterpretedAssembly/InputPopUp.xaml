@@ -1,0 +1,15 @@
+﻿<Window x:Class="InterpretedAssembly.InputPopUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterpretedAssembly"
+        mc:Ignorable="d"
+        Title="Input" Height="106.906" Width="331.353" Initialized="Window_Initialized" ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid Background="#FF2C2C2C">
+        <TextBox x:Name="InputTextBox" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221"/>
+        <TextBox x:Name="InfoTextBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="301"/>
+        <Button x:Name="SubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="236,38,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="SubmitButton_Click"/>
+
+    </Grid>
+</Window>

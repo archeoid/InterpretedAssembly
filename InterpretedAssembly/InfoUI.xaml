@@ -1,0 +1,29 @@
+﻿<Window x:Class="InterpretedAssembly.InfoUI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterpretedAssembly"
+        mc:Ignorable="d"
+        Title="Info" Height="569.5" Width="448.28" Initialized="Window_Initialized">
+    <Grid Background="#FF2C2C2C">
+        <GroupBox Header="Instruction Set" Margin="10" Foreground="White">
+            <Grid x:Name="TabGrid" Margin="0">
+                <TabControl Margin="10" Background="{x:Null}">
+                    <TabItem Header="Arithmetic">
+                        <TextBox x:Name="TextBox1" Margin="10" TextWrapping="Wrap" Text="ALL INSTRUCTIONS STORE RESULT IN DEST REGISTER&#xA;&#xA;ADD SRC DEST&#xA;&#x9;Add SRC to DEST&#xA;&#x9;&#x9;ADD R1 2 &#xA;SUB SRC DEST&#xA;&#x9;Subtract SRC from DEST&#xA;&#x9;&#x9;SUB R1 R0 &#xA;MUL SRC DEST&#xA;&#x9;Multiply DEST by SRC&#xA;&#x9;&#x9;MUL R3 10&#xA;DIV SRC DEST&#xA;&#x9;Divide SRC by DEST, truncating floating points&#xA;&#x9;&#x9;DIV R3 10&#xA;REM SRC DEST&#xA;&#x9;Divide SRC by DEST, getting remainder (Mod)&#xA;&#x9;&#x9;DIV R3 10&#xA;DEC DEST&#xA;&#x9;Decrement DEST&#xA;&#x9;&#x9;DEC R1&#xA;INC DEST&#xA;&#x9;Increment DEST&#xA;&#x9;&#x9;INC R3" Background="{x:Null}" Foreground="White"/>
+                    </TabItem>
+                    <TabItem Header="Logic">
+                        <TextBox x:Name="TextBox2" Margin="10" TextWrapping="Wrap" Text="EQL VAL VAL2 - Equal&#xD;&#xA;EQL VAL VAL2 - Not Equal&#xD;&#xA;LES VAL VAL2 - Less than&#xD;&#xA;GTR VAL VAL2 - Greater than&#xD;&#xA;LSE VAL VAL2 - Less than or Equal&#xD;&#xA;GTE VAL VAL2 - Greater than or Equal&#xD;&#xA;&#xD;&#xA;EXAMPLE&#xD;&#xA;&#xD;&#xA;:START&#xD;&#xA;INC R1&#xD;&#xA;PRT R1&#xD;&#xA;EQL R1 10&#xD;&#xA;+JMP END&#xD;&#xA;-JMP START&#xD;&#xA;:END&#xD;&#xA;&#xD;&#xA;Prints values 1 to 10" Background="{x:Null}" Foreground="White"/>
+                    </TabItem>
+                    <TabItem Header="Pixel Grid">
+                        <TextBox x:Name="TextBox3" Margin="10" TextWrapping="Wrap" Text="Pixel Grid:&#xA;PXL X Y VAL&#xA;&#x9;Sets the pixel at X,Y to Black or White&#xA;&#x9;VAL &lt;= 0  is OFF&#xA;&#x9;VAL &gt; 0 is ON&#xA;HSV X Y H S V&#xA;&#x9;Sets the pixel at X,Y to a HSV value&#xA;&#x9;H - 0 to 360&#xA;&#x9;S,V - 0 to 100&#xA;RGB X Y R G B&#xA;&#x9;Sets the pixel at X,Y to a RGB value&#xA;&#x9;0 to 255&#xD;&#xA;VAL&#xA;&#x9;Clears the Pixel Grid to all black" Background="{x:Null}" Foreground="White"/>
+                    </TabItem>
+                    <TabItem Header="Other">
+                        <TextBox x:Name="TextBox4" Margin="10" TextWrapping="Wrap" Text="Data transfer:&#xA;MOV SRC DEST&#xA;&#x9;Copy SRC value to DEST&#xA;&#x9;&#x9;MOV 2 R2&#xA;SWP SRC DEST&#xA;&#x9;Swap the SRC value with the DEST value&#xA;&#x9;&#x9;SWP R2 R3&#xA;Jumps:&#xA;JMP LBL&#xA;&#x9;Jumps to Label&#xA;RJP LBL&#xA;&#x9;Jumps to label and stores current position to be jumped &#x9;back to later.&#xA;RJP&#xA;&#x9;Jumps back to last executed RJP command&#xA;Other:&#xA;SLP VAL&#xA;&#x9;Sleeps for VAL Milliseconds&#xA;" Background="{x:Null}" Foreground="White"/>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

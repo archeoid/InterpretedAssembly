@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="IA" extensions=".ia" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+	<!-- The named colors 'Comment' and 'String' are used in SharpDevelop to detect if a line is inside a multiline string/comment -->
+	<Color name="Instructions" fontWeight="bold" foreground="#FFFFA500"/>
+	<Color name="Jumps" fontWeight="bold" foreground="#FF00BFFF"/>
+	<Color name="Output" fontWeight="bold" foreground="#FFFFFF00"/>
+	<Color name="Logic" fontWeight="bold" foreground="#FFBA55D3"/>
+	<Color name="Registers" fontWeight="bold" foreground="#FFFF4500"/>
+	<Color name="Labels" foreground="#FF90EE90"/>
+	<Color name="Plus" foreground="#FF90EE90"/>
+	<Color name="Minus" foreground="#FFDB7093"/>
+	<Color name="Constant" foreground="#FF808080"/>
+	<Color name="JmpLabel" foreground="#FF87CEFA"/>
+  <Color name="Comment" foreground="#FF808080"/>
+	<Property name="DocCommentMarker" value="//" />
+	
+	<!-- This is the main ruleset. -->
+	<RuleSet ignoreCase="true">
+		<Keywords color="Instructions">
+			<Word>add</Word>
+      <Word>abs</Word>
+			<Word>sub</Word>
+			<Word>mul</Word>
+			<Word>div</Word>
+			<Word>rem</Word>
+			<Word>inc</Word>
+			<Word>dec</Word>
+      <Word>slp</Word>
+			<Word>mov</Word>
+      <Word>swp</Word>
+      <Word>rnd</Word>
+		</Keywords>
+		<Keywords color="Output">
+			<Word>prt</Word>
+      <Word>pxl</Word>
+      <Word>clr</Word>
+      <Word>hue</Word>
+      <Word>hsv</Word>
+      <Word>rgb</Word>
+		</Keywords>
+		<Keywords color="Jumps">
+			<Word>jmp</Word>
+			<Word>rjp</Word>
+		</Keywords>	
+		<Keywords color="Logic">
+			<Word>les</Word>
+			<Word>gtr</Word>
+			<Word>lse</Word>
+			<Word>gte</Word>
+			<Word>eql</Word>
+      <Word>neq</Word>
+      <Word>end</Word>
+		</Keywords>
+		<Span color="Registers">
+			<Begin>\sR[0-9]+</Begin>
+			<End> </End>
+		</Span>
+    <Span color="Registers">
+      <Begin>\sGRD</Begin>
+      <End>D</End>
+    </Span>
+		<Rule color="Plus">
+			[+]
+		</Rule>
+		<Rule color="Minus">
+			[-]
+		</Rule>
+		<Rule color="Constant">
+      \s[-]?[0-9]+([.|0-9]+)?
+    </Rule>
+		<Rule color="JmpLabel">
+			\s[A-Z]+
+		</Rule>
+		<Span color="Labels">
+			<Begin>^:</Begin>
+		</Span>
+    <Span color="Comment">
+      <Begin>^//</Begin>
+    </Span>
+	</RuleSet>
+</SyntaxDefinition>
